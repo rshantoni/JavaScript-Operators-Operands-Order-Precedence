@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grade Average Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Grade Average Calculator</h1>
+        <p>Enter grades for the 5 subjects grades:</p>
+        <p>DCIT 22: <input type="number" id="dcit22" placeholder="Grade (1.25)" value="1.25"></p>
+        <p>DCIT 23: <input type="number" id="dcit23" placeholder="Grade (1.50)" value="1.50"></p>
+        <p>GNED 07: <input type="number" id="gned07" placeholder="Grade (1.75)" value="1.75"></p>
+        <p>GNED 10: <input type="number" id="gned10" placeholder="Grade (2.00)" value="2.00"></p>
+        <p>FITT 4: <input type="number" id="fitt4" placeholder="Grade (2.25)" value="2.25"></p>
+        <button onclick="calculateAverage()">Calculate Average</button>
+        <p id="average"></p>
+    </div>
+
+    <script>
+        // This program calculates the average of 5 subject grades entered by the user
+        function calculateAverage() {
+            // Get the grades entered by the user for each subject
+            var dcit22 = parseFloat(document.getElementById("dcit22").value);
+            var dcit23 = parseFloat(document.getElementById("dcit23").value);
+            var gned07 = parseFloat(document.getElementById("gned07").value);
+            var gned10 = parseFloat(document.getElementById("gned10").value);
+            var fitt4 = parseFloat(document.getElementById("fitt4").value);
+
+            // Calculate the average of the grades
+            var average = (dcit22 + dcit23 + gned07 + gned10 + fitt4) / 5;
+
+            // Display the average grade on the webpage
+            document.getElementById("average").innerText = "Average Grade: " + average.toFixed(2);
+        }
+    </script>
+</body>
+</html>
